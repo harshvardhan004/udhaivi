@@ -1,5 +1,7 @@
 package com.udhaivi.udhaivihealthcare.menu;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
@@ -34,6 +37,7 @@ public class MenuFragment extends Fragment {
 
     LinearLayout profiledata, prescription;
     BottomSheetDialog bottomSheetDialog;
+    TextView username;
 
     LinearLayout logout;
 
@@ -80,6 +84,12 @@ public class MenuFragment extends Fragment {
 
         profiledata = view.findViewById(R.id.profiledata);
         logout = view.findViewById(R.id.logout);
+        username = view.findViewById(R.id.username);
+
+        SharedPreferences editor = getActivity().getSharedPreferences("User_Details", MODE_PRIVATE);
+        String name = editor.getString("name", "");
+//        String phone = editor.getString("phone", "");
+        username.setText(name);
 
         profiledata.setOnClickListener(new View.OnClickListener() {
             @Override

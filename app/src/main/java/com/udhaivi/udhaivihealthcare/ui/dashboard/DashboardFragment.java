@@ -1,30 +1,38 @@
 package com.udhaivi.udhaivihealthcare.ui.dashboard;
 
 import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.github.jhonnyx2012.horizontalpicker.DatePickerListener;
 import com.github.jhonnyx2012.horizontalpicker.HorizontalPicker;
 import com.google.android.material.snackbar.Snackbar;
+import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 import com.udhaivi.udhaivihealthcare.R;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentDashboardBinding;
-
 import org.joda.time.DateTime;
+import java.util.ArrayList;
+import kotlin.Unit;
 
 public class DashboardFragment extends Fragment implements DatePickerListener {
 
     private FragmentDashboardBinding binding;
+    private CircularProgressBar circularProgressBar;
+    ArrayList<String> values = new ArrayList<>();
 
     @SuppressLint("ResourceAsColor")
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -73,4 +81,20 @@ public class DashboardFragment extends Fragment implements DatePickerListener {
     public void onDateSelected(DateTime dateSelected) {
 
     }
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            Log.d("receiver", "Got_message1: " + intent.getStringArrayListExtra("peerIdD"));
+
+            values = intent.getStringArrayListExtra("peerIdD");
+
+            if(values.size() !=0) {
+            }
+
+            values.clear();
+        }
+    };
+
 }

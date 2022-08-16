@@ -141,6 +141,7 @@
                     android:gravity="right"
                     android:textColor="#FF5252"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:textSize="14dp"/>
             </LinearLayout>
 

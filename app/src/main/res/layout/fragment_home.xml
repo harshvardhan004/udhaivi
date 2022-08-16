@@ -21,6 +21,22 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="25dp"-->
+<!--                        android:layout_height="25dp"-->
+<!--                        android:id="@+id/back"-->
+<!--                        android:background="@drawable/circular_img"-->
+<!--                        android:src="@drawable/ic_right_arrow_blue"/>-->
+
+<!--                </LinearLayout>-->
+
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,7 +112,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="20dp">
 
@@ -107,6 +123,16 @@
                         android:textColor="@color/black"
                         android:textSize="18dp"
                         android:textStyle="bold"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:indicatorColor="@color/black"
+                        app:indicatorDirectionLinear="leftToRight"
+                        android:id="@+id/horizontalprogress"
+                        android:indeterminate="true"
+                        android:scrollbarSize="5dp"/>
                 </LinearLayout>
 
                 <HorizontalScrollView

@@ -63,8 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         textButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textButton.startAnimation();
-
                 try { verifyUser();
                     InputMethodManager imm = (InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
@@ -104,8 +102,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-
+   private int statuscode=0;
     public void Call_server(final String data) {
+
+
         try {
             RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
             //  String url = Config.URL_API;//Helpers.getappUrl(this); // <----enter your post url here
@@ -120,25 +120,35 @@ public class LoginActivity extends AppCompatActivity {
                     //   Log.d("xyz", user_id_txt);
                     Log.d("status", response);
 
-                    if(response.equals("0")) {
-                        Toast.makeText(LoginActivity.this, "Not Found!", Toast.LENGTH_LONG).show();
-                    }else{
+                    try {
+                        JSONObject tbldata = new JSONObject(response);
+                        statuscode = tbldata.getInt("statuscode");
 
-                        try {
+                            if(statuscode == 404) {
+                                Toast.makeText(LoginActivity.this, "Not Found!", Toast.LENGTH_LONG).show();
+//                        textButton.stopAnimation();
 
-                            JSONObject tbldata = new JSONObject(response);
-                            Log.d("tbldata", String.valueOf(tbldata.getJSONArray("tbldata")));
-                            JSONArray parentArray = new JSONArray();
-                            parentArray = tbldata.getJSONArray("tbldata");
+                            }else if(statuscode == 500){
+                                Toast.makeText(LoginActivity.this, "Accunt Not Activated! Please contact admin.", Toast.LENGTH_LONG).show();
+//                        textButton.stopAnimation();
+                            }
+                            else {
 
-                            for (int i = 0; i < parentArray.length(); i++) {
+                                textButton.startAnimation();
 
-                                JSONObject row = parentArray.getJSONObject(i);
+                                Log.d("tbldata", String.valueOf(tbldata.getJSONArray("tbldata")));
+                                JSONArray parentArray = new JSONArray();
+                                parentArray = tbldata.getJSONArray("tbldata");
 
-                                String emp_id = row.getString("name");
+                                for (int i = 0; i < parentArray.length(); i++) {
 
-                                    String firstname = row.getString("username");
+                                    JSONObject row = parentArray.getJSONObject(i);
+
+                                    String emp_id = row.getString("user_id");
+
+                                    String firstname = row.getString("name");
                                     String contact1 = row.getString("id");
+                                    String name = row.getString("name");
 
                                     //Log.d("id",id);
 //                                    String classes = innerElem.getString("classes");
@@ -191,12 +201,11 @@ public class LoginActivity extends AppCompatActivity {
 //                                    String mother_occupation = innerElem.getString("mother_occupation");
 
 
-
                                     SharedPreferences.Editor editor = getSharedPreferences("User_Details", MODE_PRIVATE).edit();
                                     editor.putString("firstname", firstname);
                                     editor.putString("phone", contact1);
-//                                    editor.putString("lastname", innerElem.getString("lastname"));
-//                                    editor.putString("address2", innerElem.getString("address2"));
+                                    editor.putString("name", name);
+                                    editor.putString("user_id", row.getString("user_id"));
 //                                    editor.putString("address1", innerElem.getString("address1"));
 //                                    editor.putString("id", innerElem.getString("id"));
 //                                    editor.putString("emp_id", innerElem.getString("emp_id"));
@@ -232,6 +241,7 @@ public class LoginActivity extends AppCompatActivity {
                                     startActivity(ia);
                                     finish();
 
+                                }
                             }
 
                         } catch (JSONException e) {
@@ -242,7 +252,6 @@ public class LoginActivity extends AppCompatActivity {
 
                     }
 
-                }
             }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
                 @Override
                 public void onErrorResponse(VolleyError error) {

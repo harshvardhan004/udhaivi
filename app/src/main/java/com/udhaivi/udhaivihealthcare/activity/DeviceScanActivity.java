@@ -23,10 +23,12 @@ import android.bluetooth.BluetoothManager;
 import android.bluetooth.le.ScanFilter;
 import android.companion.BluetoothLeDeviceFilter;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -41,6 +43,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -105,6 +109,8 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
                 }
             }, 3000);
         }
+
+        statusCheck();
 
         mHandler = new Handler();
         if (!getPackageManager().hasSystemFeature(
@@ -451,7 +457,7 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
                         .findViewById(R.id.device_address);
                 viewHolder.deviceName = (TextView) view
                         .findViewById(R.id.device_name);
-                viewHolder.deviceRssi = (TextView) view.findViewById(R.id.device_rssi);
+//                viewHolder.deviceRssi = (TextView) view.findViewById(R.id.device_rssi);
                 //   viewHolder.deviceRssi = (TextView) view.findViewById(R.id.device_rssi);
                 view.setTag(viewHolder);
             } else {
@@ -469,7 +475,7 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
             if (extendedBluetoothDevice.rssi == ExtendedBluetoothDevice.NO_RSSI) {
                 viewHolder.deviceRssi.setText("Bonded");
             } else {
-                viewHolder.deviceRssi.setText("Rssi:" + extendedBluetoothDevice.rssi);
+//                viewHolder.deviceRssi.setText("Rssi:" + extendedBluetoothDevice.rssi);
             }
 
             return view;
@@ -477,6 +483,34 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
 
 
     }
+
+    public void statusCheck() {
+        final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            buildAlertMessageNoGps();
+
+        }
+    }
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
 
 
     // Device scan callback.

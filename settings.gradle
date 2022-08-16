@@ -1,2 +1,2 @@
-include ':app', ':hellochartslibrary', ':blesdk_2025'
+include ':app', ':hellochartslibrary', ':blesdk_2025', 'crop-me'
 //,':blesdk_1810g'

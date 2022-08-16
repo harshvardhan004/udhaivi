@@ -1,0 +1,79 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+	package
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:2:5-36
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:1-30:12
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:1:11-69
+permission#${applicationId}.provider.READ
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:4:5-65
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:4:17-62
+uses-permission#${applicationId}.provider.READ
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:5:5-69
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:5:22-67
+application
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:7:5-29:19
+	android:supportsRtl
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:8:9-41
+activity#com.mikelau.croperino.CropImage
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:11:9-16:15
+	android:screenOrientation
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:15:13-49
+	android:label
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:14:13-45
+	android:configChanges
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:13:13-63
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:12:13-38
+provider#android.support.v4.content.FileProvider
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:18:9-27:20
+	android:readPermission
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:23:13-68
+	android:grantUriPermissions
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:22:13-47
+	android:authorities
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:20:13-60
+	android:exported
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:19:13-67
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:24:13-26:57
+	android:resource
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:26:17-55
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml:25:17-67
+uses-sdk
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		ADDED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\admin\AndroidStudioProjects\MJGECollege\crop-me\src\main\AndroidManifest.xml

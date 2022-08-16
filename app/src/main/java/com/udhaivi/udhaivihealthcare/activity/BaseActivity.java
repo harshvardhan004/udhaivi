@@ -78,7 +78,7 @@ public  class BaseActivity extends AppCompatActivity implements DataListener2025
      */
     protected void sendValue(byte[]value){
         if(!BleManager.getInstance().isConnected()){
-            showToast(getString(R.string.pair_device));
+//            showToast(getString(R.string.pair_device));
             return;
         }
         if(value==null)return;

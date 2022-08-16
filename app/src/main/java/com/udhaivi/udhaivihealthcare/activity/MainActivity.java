@@ -156,7 +156,7 @@ public class MainActivity extends BaseActivity implements MainAdapter.onItemClic
                         break;
                     case BluetoothAdapter.STATE_OFF:
                         if(null!=mainAdapter){
-                            mainAdapter.setEnable(false);
+//                            mainAdapter.setEnable(false);
                         }
                         if(null!=btConnect){
                         btConnect.setEnabled(true);}

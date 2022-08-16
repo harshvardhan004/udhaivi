@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_gray">#373737</color>
+    <color name="dark_green">#006666</color>
+    <color name="gray">#808080</color>
+    <color name="gray_variant">#ff565e6b</color>
+    <color name="green_variant">#2FBCA1</color>
+    <color name="white">#ffffff</color>
+    <string name="app_name">cropme</string>
+    <string name="croperino_no_storage_card">No storage card</string>
+    <string name="croperino_not_enough_space">Not enough space</string>
+    <string name="croperino_preparing_card">Preparing card</string>
+    <string name="croperino_saving_image">Saving image</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        
+    </style>
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/dark_green</item>
+        <item name="android:textColorPrimary">@color/gray_variant</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+    </style>
+</resources>

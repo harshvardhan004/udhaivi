@@ -26,6 +26,12 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.RoundedCornerMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/rounded_corner</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+
     <style name="alertdialog_week" parent="Base.V7.Theme.AppCompat.Dialog">
 
         <!-- 宽度 -->

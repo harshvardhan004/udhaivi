@@ -1,23 +1,29 @@
 package com.udhaivi.udhaivihealthcare.ui.notifications;
 
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 import com.udhaivi.udhaivihealthcare.R;
 import com.udhaivi.udhaivihealthcare.TabPagerAdapter;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentNotificationsBinding;
 import com.udhaivi.udhaivihealthcare.frags.HistoryFragment;
 import com.udhaivi.udhaivihealthcare.frags.ReportFragment;
+import com.udhaivi.udhaivihealthcare.menu.PhotoUpload;
 
 public class NotificationsFragment extends Fragment {
 
@@ -28,6 +34,7 @@ public class NotificationsFragment extends Fragment {
     TabLayout tabLayout;
     TabPagerAdapter adapter;
     int indicatorWidth;
+    ImageView addhistory;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -41,6 +48,7 @@ public class NotificationsFragment extends Fragment {
         tabLayout = root.findViewById(R.id.tab);
         mIndicator = root.findViewById(R.id.indicator);
         viewPager = root.findViewById(R.id.viewPager);
+        addhistory = root.findViewById(R.id.addhistory);
 
 //        final ReportFragment reportFragment = new ReportFragment();
         HistoryFragment historyFragment = new HistoryFragment();
@@ -57,6 +65,13 @@ public class NotificationsFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        addhistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bottomsheetdialog();
+            }
+        });
 
         tabLayout.post(new Runnable() {
             @Override
@@ -93,6 +108,63 @@ public class NotificationsFragment extends Fragment {
 
         return root;
     }
+
+    private CardView cd1;
+
+    public void bottomsheetdialog() {
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(getContext(), R.style.TransparentDialog);
+            View parentView = getLayoutInflater().inflate(R.layout.add_new_files, null);
+        bottomSheetDialog.setContentView(parentView);
+
+        cd1 = parentView.findViewById(R.id.cd1);
+        cd1.setBackgroundResource(R.drawable.card_view_bg);
+
+        bottomSheetDialog.show();
+
+//        CardView video = parentView.findViewById(R.id.video);
+//        video.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                ((ProfileActivity)getContext()).videofrag(Attemptname, pid);
+//
+//                bottomSheetDialog.dismiss();
+//            }
+//        });
+//        CardView pdf = parentView.findViewById(R.id.pdf);
+//        pdf.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                ((ProfileActivity)getContext()).pdffrag(Attemptname, pid);
+//
+//                bottomSheetDialog.dismiss();
+//            }
+//        });
+
+//        CardView folder = parentView.findViewById(R.id.folder);
+//        folder.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                ((ProfileActivity)getContext()).folderfrag(Attemptname, pid);
+//
+//                bottomSheetDialog.dismiss();
+//            }
+//        });
+
+        CardView stdtxt = parentView.findViewById(R.id.photo);
+        stdtxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                bottomSheetDialog.dismiss();
+                startActivity(new Intent(getActivity(), PhotoUpload.class));
+            }
+        });
+    }
+
 
     @Override
     public void onDestroyView() {

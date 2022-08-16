@@ -21,10 +21,9 @@ public class Splashscreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
         getSupportActionBar().hide();
+
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
 
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -37,7 +36,7 @@ public class Splashscreen extends AppCompatActivity {
                     String phone = editor.getString("firstname", "");
                     if( name == "" && phone == ""){
 
-                    Intent i = new Intent(Splashscreen.this, LoginActivity.class);
+                    Intent i = new Intent(Splashscreen.this, LoginSplash.class);
                     startActivity(i);
                     finish();
                     }

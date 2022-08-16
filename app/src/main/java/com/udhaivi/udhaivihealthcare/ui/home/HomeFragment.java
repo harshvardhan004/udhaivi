@@ -1,7 +1,16 @@
 package com.udhaivi.udhaivihealthcare.ui.home;
 
+import static android.content.Context.MODE_PRIVATE;
+import static android.graphics.BlendMode.COLOR;
+
+import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,10 +22,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.compose.ui.graphics.Color;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -24,25 +36,33 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.udhaivi.udhaivihealthcare.Dashboard;
 import com.udhaivi.udhaivihealthcare.ECGList;
 import com.udhaivi.udhaivihealthcare.R;
+import com.udhaivi.udhaivihealthcare.activity.MainActivity;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private List<Map<String,String>> listnew = new ArrayList<>();
     ArrayList<String> values = new ArrayList<>();
-    TextView hrtrate, bp, spo2, hrv, temp, stress;
+    TextView hrtrate, bp, spo2, hrv, temp, stress, username;
     CardView ecgcard;
     String address;
+    int sync = 1;
+    LinearProgressIndicator line;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -57,6 +77,18 @@ public class HomeFragment extends Fragment {
         hrv = root.findViewById(R.id.hrv);
         temp = root.findViewById(R.id.temp);
         stress = root.findViewById(R.id.stress);
+        username = root.findViewById(R.id.username);
+        line = root.findViewById(R.id.horizontalprogress);
+
+        line.animate();
+
+        SharedPreferences editor = getActivity().getSharedPreferences("User_Details", MODE_PRIVATE);
+        String name = editor.getString("name", "");
+        String phone = editor.getString("phone", "");
+
+        username.setText(name);
+
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(mMessageReceiver, new IntentFilter("BDATA"));
 
         root.findViewById(R.id.ecgcard).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +100,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-      root.findViewById(R.id.sos).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.sos).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                ViewDialog alert = new ViewDialog();
@@ -77,17 +109,20 @@ public class HomeFragment extends Fragment {
             }
         });
 
-      root.findViewById(R.id.reload).setOnClickListener(new View.OnClickListener() {
+        root.findViewById(R.id.reload).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                sync = 0;
+
+                line.setVisibility(View.VISIBLE);
                 ((Dashboard)getActivity()).getalldata();
                 ((Dashboard)getActivity()).showConnectDialog(getString(R.string.loading));
 
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        getdata();
+//                        getdata();
                     }
                 }, 2000);
             }
@@ -96,9 +131,10 @@ public class HomeFragment extends Fragment {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                getdata();
+//                getdata();
+                sync = 0;
             }
-        }, 4000);
+        }, 3000);
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
 
@@ -117,29 +153,35 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
+        LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(mMessageReceiver);
+
     }
 
-    public void getdata(){
+    public void getdata(ArrayList<String> val){
 
-        values.clear();
+//        this.values.clear();
 
-        Log.d("afs4f485f4d", String.valueOf(((Dashboard) getActivity()).getlistdata()));
+//        Log.d("afs4f485f4d", String.valueOf(((Dashboard) getActivity()).getlistdata()));
 
-        values = ((Dashboard) getActivity()).getlistdata();
+//        this.values = ((Dashboard) getActivity()).getlistdata();
 
-        if(values.size() == 0)return;
-        hrtrate.setText(values.get(5));
-        bp.setText(values.get(2)+"/"+values.get(3));
-        spo2.setText(values.get(0)+"%");
-        hrv.setText(values.get(6));
-        temp.setText(values.get(7)+"C");
-        stress.setText(values.get(4));
+        if(val.size() == 0)return;
+        hrtrate.setText(val.get(7));
+        bp.setText(val.get(2)+"/"+ val.get(3));
+        spo2.setText(val.get(0)+"%");
+        hrv.setText(val.get(5));
+        temp.setText(val.get(6)+"C");
+        stress.setText(val.get(4));
 
-        ((Dashboard)getActivity()).dissMissDialog();
+
+//        ((Dashboard)getActivity()).dissMissDialog();
 
 //        String query = "insert into vitals(date, hrtrate, hbp, lbp, spo, hrv, temp, stress ) values('"+values.get(1)+"', '"+values.get(5)+"', '"+values.get(2)+"', '"+values.get(3)+"', '"+values.get(0)+"', '"+values.get(6)+"', '"+values.get(7)+"', '"+values.get(4)+"')";
-        Call_server(values);
-
+        if(sync == 0) {
+            sync = 1;
+            Call_server(val);
+        }
+        line.setVisibility(View.GONE);
     }
 
 
@@ -178,5 +220,38 @@ public class HomeFragment extends Fragment {
         }
     }
 
+
+    private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            // Get extra data included in the Intent
+            //  values.clear();
+
+            Log.d("receiver", "Got_message: " + intent.getStringArrayListExtra("peerId"));
+
+            values = intent.getStringArrayListExtra("peerId");
+
+            getdata(values);
+
+//            if(values.size() == 0)return;
+//            hrtrate.setText(values.get(5));
+//            bp.setText(values.get(2)+"/"+values.get(3));
+//            spo2.setText(values.get(0)+"%");
+//            hrv.setText(values.get(6));
+//            temp.setText(values.get(7)+"C");
+//            stress.setText(values.get(4));
+//
+////            if(((Dashboard)getActivity()).progressDialog.isShowing())
+//            ((Dashboard)getActivity()).dissMissDialog();
+//
+////        String query = "insert into vitals(date, hrtrate, hbp, lbp, spo, hrv, temp, stress ) values('"+values.get(1)+"', '"+values.get(5)+"', '"+values.get(2)+"', '"+values.get(3)+"', '"+values.get(0)+"', '"+values.get(6)+"', '"+values.get(7)+"', '"+values.get(4)+"')";
+//            if(sync == 0) {
+//                sync = 1;
+//                Call_server(values);
+//            }
+
+            values.clear();
+        }
+    };
 
 }
