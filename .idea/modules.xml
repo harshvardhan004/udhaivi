@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/udhaivi.iml" filepath="$PROJECT_DIR$/.idea/modules/udhaivi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/udhaivi.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/udhaivi.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/udhaivi.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/udhaivi.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/udhaivi.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/udhaivi.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/udhaivi.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/udhaivi.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.iml" filepath="$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.main.iml" filepath="$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/blesdk_2025/udhaivi.blesdk_2025.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/hellochartslibrary/udhaivi.hellochartslibrary.unitTest.iml" />
+    </modules>
+  </component>
+</project>

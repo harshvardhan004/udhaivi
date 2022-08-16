@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.udhaivi.udhaivihealthcare.activity.MainActivity">
+
+
+<Button
+    android:layout_width="match_parent"
+    android:id="@+id/BT_CONNECT"
+    android:text="Connect Device"
+    android:enabled="false"
+    android:layout_height="wrap_content" />
+
+    <Button
+    android:layout_width="match_parent"
+    android:id="@+id/dashboard"
+    android:text="Dashboard"
+    android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/main_recyclerview"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="lecho.lib.hellocharts"
+5    android:versionCode="2"
+6    android:versionName="1.1" >
+7
+8    <uses-sdk
+9        android:minSdkVersion="15"
+9-->E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+10        android:targetSdkVersion="18" />
+10-->E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+11
+12</manifest>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/udhaivi/app/src/main/res/layout/actionbar_indeterminate_progress.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_alarm_set.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_alarm_set2.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_auto_temp_data.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_autooxy_info.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_basic.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_battery.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_clear.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_clock_set.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_csv.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_dashboard.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_detail_data.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_device_info.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_dial.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg.xml" value="0.25" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg_data.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg_report.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecghisdata.xml" value="0.1935185185185185" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecgppg_pdf.xml" value="0.22447916666666667" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_scan.xml" value="0.22" />
+        <entry key="..\:/udhaivi/app/src/main/res/layout/listitem_device.xml" value="0.29322916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

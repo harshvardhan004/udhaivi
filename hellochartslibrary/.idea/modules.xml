@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../androidSupportLibrary/androidSupportLibrary.iml" filepath="$PROJECT_DIR$/../androidSupportLibrary/androidSupportLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hellochartslibrary.iml" filepath="$PROJECT_DIR$/hellochartslibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jstylegogo_hr.iml" filepath="$PROJECT_DIR$/../jstylegogo_hr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../jstylelife/jstylelife.iml" filepath="$PROJECT_DIR$/../jstylelife/jstylelife.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../library/library.iml" filepath="$PROJECT_DIR$/../library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../main/main.iml" filepath="$PROJECT_DIR$/../main/main.iml" />
+    </modules>
+  </component>
+</project>

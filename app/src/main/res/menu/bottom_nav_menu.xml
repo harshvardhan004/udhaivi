@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/homepage"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ammdpage"
+        android:title="AMMD" />
+
+    <item
+        android:id="@+id/navigation_schedule"
+        android:icon="@drawable/ic_baseline_date_range_24"
+        android:title="Schedule" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/history"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/navigation_menu"
+        android:icon="@drawable/ic_menu1"
+        android:title="Menu" />
+</menu>

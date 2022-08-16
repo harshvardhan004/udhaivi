@@ -1,0 +1,1 @@
+int drawable heart 0x0
