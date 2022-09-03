@@ -23,6 +23,7 @@ import com.udhaivi.udhaivihealthcare.TabPagerAdapter;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentNotificationsBinding;
 import com.udhaivi.udhaivihealthcare.frags.HistoryFragment;
 import com.udhaivi.udhaivihealthcare.frags.ReportFragment;
+import com.udhaivi.udhaivihealthcare.menu.Payment;
 import com.udhaivi.udhaivihealthcare.menu.PhotoUpload;
 
 public class NotificationsFragment extends Fragment {
@@ -161,6 +162,17 @@ public class NotificationsFragment extends Fragment {
 
                 bottomSheetDialog.dismiss();
                 startActivity(new Intent(getActivity(), PhotoUpload.class));
+            }
+        });
+
+
+        CardView payment = parentView.findViewById(R.id.payment);
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                bottomSheetDialog.dismiss();
+                startActivity(new Intent(getActivity(), Payment.class));
             }
         });
     }

@@ -148,6 +148,13 @@
             android:name=".app.Otp"
             android:theme="@style/AppTheme.NoActionBar" />
 
+
+        <activity
+            android:name=".menu.Payment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".menu.PhotoUpload"
+            android:theme="@style/AppTheme.NoActionBar" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
