@@ -58,6 +58,15 @@ import java.util.ArrayList;
             noteEt = findViewById(R.id.note);
             nameEt = findViewById(R.id.name);
             upiIdEt = findViewById(R.id.upi_id);
+
+            amountEt.setText(getIntent().getStringExtra("pack_paymemt").toString().trim());
+            noteEt.setText(getIntent().getStringExtra("pack_name").trim());
+            nameEt.setText("Udhaivi Healthcare");
+            upiIdEt.setText("7338667777@hdfcbank");
+
+            if(amountEt.getText().toString().equals("") || noteEt.getText().toString().equals("")) return;
+
+            payUsingUpi(amountEt.getText().toString(), upiIdEt.getText().toString(), nameEt.getText().toString(), noteEt.getText().toString());
         }
 
         void payUsingUpi(String amount, String upiId, String name, String note) {
@@ -74,10 +83,8 @@ import java.util.ArrayList;
             Intent upiPayIntent = new Intent(Intent.ACTION_VIEW);
             upiPayIntent.setData(uri);
 
-            // will always show a dialog to user to choose an app
             Intent chooser = Intent.createChooser(upiPayIntent, "Pay with");
 
-            // check if intent resolves
             if(null != chooser.resolveActivity(getPackageManager())) {
                 startActivityForResult(chooser, UPI_PAYMENT);
             } else {
@@ -153,6 +160,9 @@ import java.util.ArrayList;
             } else {
                 Toast.makeText(Payment.this, "Internet connection is not available. Please check and try again", Toast.LENGTH_SHORT).show();
             }
+
+            finish();
+
         }
 
         public static boolean isConnectionAvailable(Context context) {

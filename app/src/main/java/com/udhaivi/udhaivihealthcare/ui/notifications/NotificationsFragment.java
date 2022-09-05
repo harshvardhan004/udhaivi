@@ -24,6 +24,7 @@ import com.udhaivi.udhaivihealthcare.databinding.FragmentNotificationsBinding;
 import com.udhaivi.udhaivihealthcare.frags.HistoryFragment;
 import com.udhaivi.udhaivihealthcare.frags.ReportFragment;
 import com.udhaivi.udhaivihealthcare.menu.Payment;
+import com.udhaivi.udhaivihealthcare.menu.PdfActivity;
 import com.udhaivi.udhaivihealthcare.menu.PhotoUpload;
 
 public class NotificationsFragment extends Fragment {
@@ -133,16 +134,15 @@ public class NotificationsFragment extends Fragment {
 //                bottomSheetDialog.dismiss();
 //            }
 //        });
-//        CardView pdf = parentView.findViewById(R.id.pdf);
-//        pdf.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                ((ProfileActivity)getContext()).pdffrag(Attemptname, pid);
-//
-//                bottomSheetDialog.dismiss();
-//            }
-//        });
+        CardView pdf = parentView.findViewById(R.id.pdf);
+        pdf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getActivity(), PdfActivity.class));
+                bottomSheetDialog.dismiss();
+            }
+        });
 
 //        CardView folder = parentView.findViewById(R.id.folder);
 //        folder.setOnClickListener(new View.OnClickListener() {
@@ -165,16 +165,16 @@ public class NotificationsFragment extends Fragment {
             }
         });
 
-
-        CardView payment = parentView.findViewById(R.id.payment);
-        payment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                bottomSheetDialog.dismiss();
-                startActivity(new Intent(getActivity(), Payment.class));
-            }
-        });
+//
+//        CardView payment = parentView.findViewById(R.id.payment);
+//        payment.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                bottomSheetDialog.dismiss();
+//                startActivity(new Intent(getActivity(), Payment.class));
+//            }
+//        });
     }
 
 

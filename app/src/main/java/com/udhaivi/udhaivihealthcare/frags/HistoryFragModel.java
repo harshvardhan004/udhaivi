@@ -12,21 +12,23 @@ import com.udhaivi.udhaivihealthcare.R;
 
 import java.util.ArrayList;
 
-public class HistoryFragModel extends RecyclerView.Adapter<com.udhaivi.udhaivihealthcare.frags.HistoryFragModel.ViewHolder> {
+public class HistoryFragModel extends RecyclerView.Adapter<HistoryFragModel.ViewHolder> {
 
-    ArrayList<String> attendance = new ArrayList<String>();
-    ArrayList<String> attdate = new ArrayList<String>();
-    ArrayList<String> attday = new ArrayList<String>();
+    ArrayList<String> image = new ArrayList<String>();
+    ArrayList<String> pdf_title = new ArrayList<String>();
+    ArrayList<String> descrip = new ArrayList<String>();
+    ArrayList<String> type = new ArrayList<String>();
 
     private LayoutInflater mInflater;
-    private com.udhaivi.udhaivihealthcare.frags.HistoryFragModel.ItemClickListener mClickListener;
+    private ItemClickListener mClickListener;
 
     // data is passed into the constructor
-    HistoryFragModel(Context context, ArrayList<String> attendance, ArrayList<String> attdate, ArrayList<String> attday) {
+    HistoryFragModel(Context context, ArrayList<String> image, ArrayList<String> pdf_title, ArrayList<String> descrip, ArrayList<String> type) {
         this.mInflater = LayoutInflater.from(context);
-        this.attendance = attendance;
-        this.attdate = attdate;
-        this.attday = attday;
+        this.image = image;
+        this.pdf_title = pdf_title;
+        this.descrip = descrip;
+        this.type = type;
     }
 
     // inflates the row layout from xml when needed
@@ -39,10 +41,10 @@ public class HistoryFragModel extends RecyclerView.Adapter<com.udhaivi.udhaivihe
 
     @Override
     public void onBindViewHolder(com.udhaivi.udhaivihealthcare.frags.HistoryFragModel.ViewHolder holder, final int position) {
-        String t1 = attendance.get(position);
-        String t2 = attday.get(position);
-        String t3 = attdate.get(position);
-//        holder.text1.setText(t1);
+        String t1 = image.get(position);
+        String t2 = descrip.get(position);
+        String t3 = pdf_title.get(position);
+        holder.text1.setText(t3);
 //        holder.text2.setText(t2);
 //        holder.text3.setText(t3);
 
@@ -55,7 +57,7 @@ public class HistoryFragModel extends RecyclerView.Adapter<com.udhaivi.udhaivihe
     // total number of rows
     @Override
     public int getItemCount() {
-        return attendance.size();
+        return image.size();
     }
 
     // stores and recycles views as they are scrolled off screen
@@ -64,7 +66,7 @@ public class HistoryFragModel extends RecyclerView.Adapter<com.udhaivi.udhaivihe
 
         ViewHolder(View itemView) {
             super(itemView);
-//            text1 = itemView.findViewById(R.id.text1);
+            text1 = itemView.findViewById(R.id.title);
 //            itemView.setOnClickListener(this);
 //
 //            text2 = itemView.findViewById(R.id.text2);
@@ -84,7 +86,7 @@ public class HistoryFragModel extends RecyclerView.Adapter<com.udhaivi.udhaivihe
 
     // convenience method for getting data at click position
     String getItem(int id) {
-        return attendance.get(id);
+        return image.get(id);
     }
 
     // allows clicks events to be caught

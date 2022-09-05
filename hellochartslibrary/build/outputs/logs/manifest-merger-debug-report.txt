@@ -1,31 +1,31 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
+ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:1-6:33
 	package
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:4:5-36
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:4:5-36
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:6:5-30
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:6:5-30
 	xmlns:tools
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:3:5-51
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:3:5-51
 	xmlns:android
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:11-69
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:5:5-28
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml:5:5-28
 uses-sdk
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		ADDED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+		INJECTED from E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml

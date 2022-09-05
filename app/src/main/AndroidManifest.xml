@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.udhaivi.udhaivihealthcare">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -25,6 +26,9 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.BODY_SENSORS" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
     <application
         android:name=".Myapp"
@@ -36,6 +40,18 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning, UnusedAttribute">
+        <activity
+            android:name=".menu.PdfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.Payment"
+            android:exported="true" />
+        <activity
+            android:name=".menu.PhotoUpload"
+            android:exported="true"
+            android:theme="@style/AppThemeer">
+
+        </activity>
         <activity
             android:name=".app.WebView"
             android:exported="false" />
@@ -49,7 +65,7 @@
             android:label="@string/title_activity_dashboard" />
         <activity
             android:name=".activity.DeviceScanActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".app.Splashscreen"
             android:exported="true"
@@ -119,7 +135,6 @@
         <activity
             android:name=".menu.NotificationActivity"
             android:theme="@style/AppThemeer" />
-
         <activity
             android:name=".menu.PrescriptionActivity"
             android:theme="@style/AppThemeer" />
@@ -140,6 +155,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.Signup"
+            android:exported="true"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.Signupdetails"
@@ -148,13 +164,6 @@
             android:name=".app.Otp"
             android:theme="@style/AppTheme.NoActionBar" />
 
-
-        <activity
-            android:name=".menu.Payment"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".menu.PhotoUpload"
-            android:theme="@style/AppTheme.NoActionBar" />
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"

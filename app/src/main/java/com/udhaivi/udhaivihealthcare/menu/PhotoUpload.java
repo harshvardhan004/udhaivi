@@ -11,29 +11,26 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.OpenableColumns;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +45,6 @@ import com.mikelau.croperino.CropImage;
 import com.mikelau.croperino.CroperinoConfig;
 import com.mikelau.croperino.CroperinoFileUtil;
 import com.mikelau.croperino.InternalStorageContentProvider;
-import com.udhaivi.udhaivihealthcare.Config;
 import com.udhaivi.udhaivihealthcare.R;
 import com.udhaivi.udhaivihealthcare.app.CameraUtils;
 
@@ -58,6 +54,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,6 +82,12 @@ public class PhotoUpload extends AppCompatActivity {
     ImageView logo;
     TextInputEditText tct,description,attempt;
     String adminid, phone;
+    ArrayList<String> pack_id = new ArrayList<>();
+    ArrayList<String> pack_type = new ArrayList<>();
+    ArrayList<String> payment_amount = new ArrayList<>();
+    Spinner data_spinner, type_spinner;
+    ArrayAdapter adapter1, type_adapter;
+    String selected_pack, selected_pack_id, pack_price, consultant_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +99,52 @@ public class PhotoUpload extends AppCompatActivity {
 
         tct = findViewById(R.id.tct);
         description = findViewById(R.id.description);
+        data_spinner = findViewById(R.id.data_spinner);
+        type_spinner = findViewById(R.id.type_spinner);
+
+        String type_consultant[] = {"Select", "Report", "Consultancy"};
+
+        type_adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, type_consultant);
+        type_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        type_spinner.setAdapter(type_adapter);
+
+        type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
+                consultant_type = "";
+                consultant_type = type_consultant[p];
+                Log.d("jgiiug", type_consultant[p]);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        adapter1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, pack_type);
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        data_spinner.setAdapter(adapter1);
+
+        data_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
+                Log.d("Adsds", pack_type.get(p));
+                Log.d("dlfmdfkjsn", payment_amount.get(p));
+
+                selected_pack = pack_type.get(p);
+                pack_price = payment_amount.get(p);
+                selected_pack_id = pack_id.get(p);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
 
         Button b1 = findViewById(R.id.filechoose);
         b1.setOnClickListener(new View.OnClickListener() {
@@ -119,6 +168,8 @@ public class PhotoUpload extends AppCompatActivity {
 
         new CroperinoConfig("IMG_" + System.currentTimeMillis() + "", "/udhaivi/Pictures", "/sdcard/udhaivi/Pictures");
         CroperinoFileUtil.setupDirectory(this);
+
+        Call_Server();
     }
 
     public void cameraper(){
@@ -359,40 +410,22 @@ public class PhotoUpload extends AppCompatActivity {
                     Log.d("response", response);
 
                     if(response.equals("200")){
-                        Log.d("Dasdd", "AFwfa");
-                        finish();
+//                        finish();
+                        if(consultant_type.equals("Select") || consultant_type.equals("Report") ) {
+                            Log.d("Dasdd", "AFwfa");
+                            finish();
+                        }
+                        else{
+                            Log.d("skjefhef", "sdbjfbs");
+
+                            Intent i = new Intent(PhotoUpload.this, Payment.class);
+                            i.putExtra("pack_id", selected_pack_id);
+                            i.putExtra("pack_name", selected_pack);
+                            i.putExtra("pack_paymemt", pack_price);
+                            startActivity(i);
+                        }
+
                     }
-
-//                        for (int i = 0; i < parentArray.length(); i++) {
-//                            JSONObject row = parentArray.getJSONObject(i);
-//
-//                            String status12= row.getString("checkstatus");
-//                            Log.d("status333 ", status12);
-//
-//                            String message= row.getString("message");
-//                            Log.d("message ", message);
-//
-//                            message_popup("Message",message);
-//
-//                            if(status12.equals("2")){
-//
-//                                PhotoUpload.this.runOnUiThread(new Runnable() {
-//                                    @Override
-//                                    public void run() {
-//
-//                                        // Toast.makeText(getContext(), "okkkkkkkk", Toast.LENGTH_LONG).show();
-//
-//                                        tct.setText("");
-//                                        description.setText("");
-//                                        attempt.setText("");
-//                                        logo.setImageBitmap(null);
-//                                        path.setText("Select Image");
-//                                    }
-//                                });
-//                            }
-//                            selectedFilePath ="";
-//                        }
-
 
                 }
             }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
@@ -408,6 +441,7 @@ public class PhotoUpload extends AppCompatActivity {
                     MyData.put("image", uploaded_image_name);
                     MyData.put("pdf_title", Dtct);
                     MyData.put("descrip", Ddesc);
+                    MyData.put("type", "image");
 
                     Log.d("MyData ", String.valueOf(MyData));
 
@@ -524,6 +558,62 @@ public class PhotoUpload extends AppCompatActivity {
                         }).show();
             }
         });
+    }
+
+
+    public void Call_Server() {
+        try {
+            RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
+            //  String url = Config.URL_API;//Helpers.getappUrl(this); // <----enter your post url here
+            String url = "http://udhaivihealthcare.com/php/get_pkg.php";
+            Log.d("URl- ", url);
+            StringRequest MyStringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    //   Log.d("xyz", user_id_txt);
+                        try {
+
+                            JSONObject tbldata = new JSONObject(response);
+                            Log.d("tbldata", String.valueOf(tbldata.getJSONArray("tbldata")));
+                            JSONArray parentArray = new JSONArray();
+                            parentArray = tbldata.getJSONArray("tbldata");
+
+                            for (int i = 0; i < parentArray.length(); i++) {
+
+                                pack_id.add((String) parentArray.getJSONObject(i).get("pack_id"));
+//                                Log.d("pack_id", String.valueOf(parentArray.getJSONObject(i).get("pack_id")));
+
+                                pack_type.add((String) parentArray.getJSONObject(i).get("pack_type"));
+//                                Log.d("pack_type", String.valueOf(parentArray.getJSONObject(i).get("pack_type")));
+
+                                payment_amount.add((String) parentArray.getJSONObject(i).get("payment_amount"));
+//                                Log.d("payment_amount", String.valueOf(parentArray.getJSONObject(i).get("payment_amount")));
+                            }
+
+                            adapter1.notifyDataSetChanged();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                }
+            }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(PhotoUpload.this, "Data not loaded, please try after sometime....", Toast.LENGTH_LONG).show();
+
+                }
+            }) {
+                protected Map<String, String> getParams() {
+                    Map<String, String> MyData = new HashMap<String, String>();
+                    return MyData;
+                }
+            };
+
+            MyRequestQueue.add(MyStringRequest);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Toast.makeText(PhotoUpload.this, "Data not loaded, please try after sometime!", Toast.LENGTH_LONG).show();
+        }
     }
 
 

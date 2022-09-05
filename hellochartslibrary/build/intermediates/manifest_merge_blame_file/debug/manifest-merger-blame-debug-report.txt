@@ -7,8 +7,8 @@
 7
 8    <uses-sdk
 9        android:minSdkVersion="15"
-9-->C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+9-->E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
 10        android:targetSdkVersion="18" />
-10-->C:\Users\Narayan Singh\StudioProjects\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
+10-->E:\udhaivi\hellochartslibrary\src\main\AndroidManifest.xml
 11
 12</manifest>
