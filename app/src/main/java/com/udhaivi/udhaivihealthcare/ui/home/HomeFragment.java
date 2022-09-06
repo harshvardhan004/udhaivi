@@ -40,6 +40,7 @@ import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.udhaivi.udhaivihealthcare.Dashboard;
 import com.udhaivi.udhaivihealthcare.ECGList;
 import com.udhaivi.udhaivihealthcare.R;
+import com.udhaivi.udhaivihealthcare.activity.DeviceScanActivity;
 import com.udhaivi.udhaivihealthcare.activity.MainActivity;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentHomeBinding;
 
@@ -60,6 +61,7 @@ public class HomeFragment extends Fragment {
     String address;
     int sync = 1;
     LinearProgressIndicator line;
+    private Dashboard device11;
 
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -71,6 +73,7 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
         hrtrate = root.findViewById(R.id.hrtrate);
         bp = root.findViewById(R.id.bp);
         spo2 = root.findViewById(R.id.spo2);
@@ -79,6 +82,17 @@ public class HomeFragment extends Fragment {
         stress = root.findViewById(R.id.stress);
         username = root.findViewById(R.id.username);
         line = root.findViewById(R.id.horizontalprogress);
+
+//        root.findViewById(R.id.b1).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("vuh", String.valueOf((((Dashboard) getActivity()).getaddress())));
+//
+//                Intent i = new Intent(getActivity(), MainActivity.class);
+//                i.putExtra("address", String.valueOf((((Dashboard) getActivity()).getaddress())));
+//                startActivity(i);
+//            }
+//        });
 
         line.animate();
 

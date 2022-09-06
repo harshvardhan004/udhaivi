@@ -76,11 +76,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_margin="10dp"
                 app:srcCompat="@drawable/photo">
             </ImageView>
@@ -89,7 +90,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:textSize="12sp"
+                android:textSize="16sp"
                 android:textColor="@color/black"
                 android:text="Add Photo">
 
@@ -119,11 +120,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical"
+        android:layout_margin="10dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_margin="10dp"
             app:srcCompat="@drawable/ic_pdf">
         </ImageView>
@@ -132,7 +134,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:textSize="12sp"
+            android:textSize="16sp"
             android:textColor="@color/black"
             android:text="Upload PDF">
 

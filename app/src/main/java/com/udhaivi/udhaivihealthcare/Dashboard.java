@@ -78,7 +78,7 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
     String TEMP, HRTRATE, STEP, CALORIES, DISTANCE;
     int dataCount = 0;
     ArrayList<String> x = new ArrayList<>();
-    String address;
+    public String address;
     HomeFragment frag = new HomeFragment();
     private ProgressDialog progressDialog;
     private Disposable subscription;
@@ -270,8 +270,8 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
                 break;
             case BleConst.GetAutomaticSpo2Monitoring:
 
-                listspo.addAll((List<Map<String, String>>) maps.get(DeviceKey.Data));
-                Log.d("jiojlk588", String.valueOf(listspo));
+//                listspo.addAll((maps.toString()));
+                Log.d("jiojlk588", String.valueOf(maps.toString()));
                 break;
 
             case BleConst.MeasurementHrvCallback:

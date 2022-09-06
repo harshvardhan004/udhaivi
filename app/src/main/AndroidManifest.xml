@@ -25,7 +25,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.BODY_SENSORS" />
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
@@ -41,6 +40,12 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning, UnusedAttribute">
         <activity
+            android:name=".Report"
+            android:exported="false" />
+        <activity
+            android:name=".ModeCheck"
+            android:exported="false" />
+        <activity
             android:name=".menu.PdfActivity"
             android:exported="false" />
         <activity
@@ -49,9 +54,7 @@
         <activity
             android:name=".menu.PhotoUpload"
             android:exported="true"
-            android:theme="@style/AppThemeer">
-
-        </activity>
+            android:theme="@style/AppThemeer" />
         <activity
             android:name=".app.WebView"
             android:exported="false" />
@@ -66,6 +69,15 @@
         <activity
             android:name=".activity.DeviceScanActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.ModeCheck"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeer" />
+
+        <activity
+            android:name=".app.Report"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeer" />
         <activity
             android:name=".app.Splashscreen"
             android:exported="true"

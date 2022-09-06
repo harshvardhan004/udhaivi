@@ -41,7 +41,8 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:src="@drawable/hospitalcard"/>
+                            android:src="@drawable/ic_pdf"
+                            android:id="@+id/image"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -83,6 +84,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Malleshwaram"
+                                android:id="@+id/desc"
                                 android:textSize="14dp"
                                 android:layout_marginLeft="10dp"
                                 android:textColor="#565656"/>

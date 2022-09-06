@@ -95,4 +95,5 @@ dependencies {
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
     implementation project(':crop-me')
 
+    implementation 'com.shreyaspatil:EasyUpiPayment:1.1'
 }

@@ -193,4 +193,17 @@ public class HistoryFragment extends Fragment implements HistoryFragModel.ItemCl
     public void onItemClick(View view, int position) {
 
     }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        image.clear();
+        pdf_title.clear();
+        descrip.clear();
+        type.clear();
+
+        Call_server();
+
+    }
 }

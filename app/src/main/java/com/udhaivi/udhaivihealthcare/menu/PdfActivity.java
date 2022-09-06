@@ -38,6 +38,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -101,6 +102,7 @@ public class PdfActivity extends AppCompatActivity {
     ArrayAdapter adapter1, type_adapter;
     String selected_pack, selected_pack_id, pack_price, consultant_type;
     private final static int PDF_RESULT= 400;
+    LinearLayout lean1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,6 +116,7 @@ public class PdfActivity extends AppCompatActivity {
             description = findViewById(R.id.description);
             data_spinner = findViewById(R.id.data_spinner);
             type_spinner = findViewById(R.id.type_spinner);
+            lean1 = findViewById(R.id.lean1);
 
             String type_consultant[] = {"Select", "Report", "Consultancy"};
 
@@ -127,6 +130,12 @@ public class PdfActivity extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
                     consultant_type = "";
                     consultant_type = type_consultant[p];
+                    if(consultant_type.equals("Consultancy")){
+                        lean1.setVisibility(View.VISIBLE);
+                    }
+                    else{
+                        lean1.setVisibility(View.GONE);
+                    }
                     Log.d("jgiiug", type_consultant[p]);
 
                 }
@@ -457,6 +466,7 @@ public class PdfActivity extends AppCompatActivity {
                         MyData.put("pdf_title", Dtct);
                         MyData.put("descrip", Ddesc);
                         MyData.put("type", "pdf");
+                        MyData.put("report_type", consultant_type);
 
                         Log.d("MyData ", String.valueOf(MyData));
 
