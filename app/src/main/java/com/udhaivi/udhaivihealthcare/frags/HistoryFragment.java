@@ -135,6 +135,11 @@ public class HistoryFragment extends Fragment implements HistoryFragModel.ItemCl
 
 
     public void Call_server() {
+        image.clear();
+        pdf_title.clear();
+        descrip.clear();
+        type.clear();
+
         try {
             RequestQueue MyRequestQueue = Volley.newRequestQueue(getActivity());
             String url = "http://udhaivihealthcare.com/php/get_prescription_list.php";//Helpers.getappUrl(this); // <----enter your post url here
