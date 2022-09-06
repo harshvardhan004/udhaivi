@@ -4,53 +4,53 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="16"
-6-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml
+6-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="31" />
-7-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml
+7-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml
 8
 9    <permission android:name="${applicationId}.provider.READ" />
-9-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:4:5-65
-9-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:4:17-62
+9-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:4:5-65
+9-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:4:17-62
 10
 11    <uses-permission android:name="${applicationId}.provider.READ" />
-11-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:5:5-69
-11-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:5:22-67
+11-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:5:5-69
+11-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:5:22-67
 12
 13    <application
-13-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:7:5-29:19
+13-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:7:5-29:19
 14        android:label="@string/app_name"
-14-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:8:9-41
+14-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:8:9-41
 15        android:supportsRtl="true" >
-15-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:9:9-35
+15-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:9:9-35
 16        <activity
-16-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:11:9-16:15
+16-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:11:9-16:15
 17            android:name="com.mikelau.croperino.CropImage"
-17-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:12:13-38
+17-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:12:13-38
 18            android:configChanges="keyboardHidden|orientation"
-18-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:13:13-63
+18-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:13:13-63
 19            android:label="@string/app_name"
-19-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:14:13-45
+19-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:14:13-45
 20            android:screenOrientation="portrait" />
-20-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:15:13-49
+20-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:15:13-49
 21
 22        <provider
-22-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:18:9-27:20
+22-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:18:9-27:20
 23            android:name="android.support.v4.content.FileProvider"
-23-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:19:13-67
+23-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:19:13-67
 24            android:authorities="${applicationId}.provider"
-24-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:20:13-60
+24-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:20:13-60
 25            android:exported="false"
-25-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:21:13-37
+25-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:21:13-37
 26            android:grantUriPermissions="true"
-26-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:22:13-47
+26-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:22:13-47
 27            android:readPermission="${applicationId}.provider.READ" >
-27-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:23:13-68
+27-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:23:13-68
 28            <meta-data
-28-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:24:13-26:57
+28-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:24:13-26:57
 29                android:name="android.support.FILE_PROVIDER_PATHS"
-29-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:25:17-67
+29-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:25:17-67
 30                android:resource="@xml/provider_paths" />
-30-->E:\udhaivi\crop-me\src\main\AndroidManifest.xml:26:17-55
+30-->C:\Users\Narayan Singh\StudioProjects\udhaivi\crop-me\src\main\AndroidManifest.xml:26:17-55
 31        </provider>
 32    </application>
 33
