@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-     <root-path
-        name="external_cache_path"
-        path="" />
+     <external-path
+         name="external"
+         path="." />
+     <external-files-path
+         name="external_files"
+         path="." />
+     <cache-path
+         name="cache"
+         path="." />
+     <external-cache-path
+         name="external_cache"
+         path="." />
+     <files-path
+         name="files"
+         path="." />
+     <root-path name="root" path="." />
+     <files-path
+         name="twa_splash"
+         path="."  />
+     <external-path
+         name="MJGE_images"
+         path=".files" />
+     <files-path name="chitchat_images" path="Android/data/com.udhaivi.udhaivihealthcare/files/pictures/" />
+     <files-path name="chatchat_videos" path="Android/data/com.udhaivi.udhaivihealthcare/files/videos/" />
+     <files-path name="chatchat_sound" path="Android/data/com.udhaivi.udhaivihealthcare/files/sound/" />
+     <external-path name="external_files" path="Android/data/com.udhaivi.udhaivihealthcare/files/"/>
 
 </paths>

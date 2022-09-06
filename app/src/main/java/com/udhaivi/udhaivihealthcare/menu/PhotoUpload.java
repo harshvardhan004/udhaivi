@@ -45,6 +45,7 @@ import com.mikelau.croperino.CropImage;
 import com.mikelau.croperino.CroperinoConfig;
 import com.mikelau.croperino.CroperinoFileUtil;
 import com.mikelau.croperino.InternalStorageContentProvider;
+import com.udhaivi.udhaivihealthcare.BuildConfig;
 import com.udhaivi.udhaivihealthcare.R;
 import com.udhaivi.udhaivihealthcare.app.CameraUtils;
 
@@ -314,7 +315,7 @@ public class PhotoUpload extends AppCompatActivity {
     public void alertupload(){
         new AlertDialog.Builder(this)
                 .setTitle("Confirm")
-                .setMessage("Are You Sure, You Want To Add This?")
+                .setMessage("Are you sure, you want to add this?")
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
 
@@ -466,22 +467,32 @@ public class PhotoUpload extends AppCompatActivity {
         switch (requestCode) {
             case CroperinoConfig.REQUEST_TAKE_PHOTO:
                 if (resultCode == Activity.RESULT_OK) {
-                    callCropper(CroperinoFileUtil.getTempFile(), PhotoUpload.this, true, 1, 1, com.mikelau.croperino.R.color.gray, com.mikelau.croperino.R.color.gray_variant);
+                    Uri i = Uri.fromFile(CroperinoFileUtil.getTempFile());
+                    File_path = i.getPath();
+                    selectedFilePath = i.getPath();
+                    logo.setImageURI(i);
+                   // Image_Option();
+
+                   // callCropper(CroperinoFileUtil.getTempFile(), PhotoUpload.this, true, 1, 1, com.mikelau.croperino.R.color.gray, com.mikelau.croperino.R.color.gray_variant);
                 }
                 break;
             case CroperinoConfig.REQUEST_PICK_FILE:
                 if (resultCode == Activity.RESULT_OK) {
-                    CroperinoFileUtil.newGalleryFile(data, PhotoUpload.this);
-                    callCropper(CroperinoFileUtil.getTempFile(), PhotoUpload.this, true, 1, 1, com.mikelau.croperino.R.color.gray, com.mikelau.croperino.R.color.gray_variant);
+                    Uri i =FileProvider.getUriForFile(this,
+                            BuildConfig.APPLICATION_ID + ".provider",CroperinoFileUtil.newGalleryFile(data, PhotoUpload.this));
+                   // CroperinoFileUtil.newGalleryFile(data, PhotoUpload.this);
+                   // Uri i = Uri.fromFile(CroperinoFileUtil.getTempFile());
+                    File_path = i.getPath();
+                    selectedFilePath = i.getPath();
+                    logo.setImageURI(i);
+                  //  Image_Option();
+                  //  callCropper(CroperinoFileUtil.getTempFile(), PhotoUpload.this, true, 1, 1, com.mikelau.croperino.R.color.gray, com.mikelau.croperino.R.color.gray_variant);
                 }
                 break;
             case CroperinoConfig.REQUEST_CROP_PHOTO:
                 if (resultCode == Activity.RESULT_OK) {
                     Uri i = Uri.fromFile(CroperinoFileUtil.getTempFile());
-
-
                     File_path = i.getPath();
-
                     selectedFilePath = i.getPath();
 
                     Log.d("PAAAAAAAAAAAAAATH ",File_path);
@@ -508,6 +519,42 @@ public class PhotoUpload extends AppCompatActivity {
 
     }
 
+    public void Image_Option(){
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+
+
+                android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(PhotoUpload.this)
+//set icon
+                        //.setIcon(img_path)
+//set title
+                        .setTitle("Edit Image")
+//set message
+                        .setMessage("")
+                        .setCancelable(false)
+//set positive button
+                        .setPositiveButton("Crop", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //set what would happen when positive button is clicked
+                                callCropper(CroperinoFileUtil.getTempFile(), PhotoUpload.this, true, 1, 1, com.mikelau.croperino.R.color.gray, com.mikelau.croperino.R.color.gray_variant);
+                                dialogInterface.dismiss();
+                            }
+                        })
+//set negative button
+                        .setNegativeButton("Direct", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                                dialogInterface.dismiss();
+                            }
+                        }).show();
+            }
+        });
+    }
+
+
     private void captureImage() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
@@ -524,41 +571,6 @@ public class PhotoUpload extends AppCompatActivity {
         startActivityForResult(intent, CAMERA_CAPTURE_IMAGE_REQUEST_CODE);
     }
 
-    public void message_popup(String title, String  desc){
-        this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-
-
-                android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(PhotoUpload.this)
-//set icon
-                        .setIcon(R.mipmap.ic_logo)
-//set title
-                        .setTitle(title)
-//set message
-                        .setMessage(desc)
-//set positive button
-                        .setPositiveButton("Back", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //set what would happen when positive button is clicked
-                            }
-                        })
-//set negative button
-                        .setNegativeButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                //set what should happen when negative button is clicked
-                                //Toast.makeText(getApplicationContext(),"Nothing Happened",Toast.LENGTH_LONG).show();
-
-//                                PizzasecondFragment.refreshList();
-//                                getFragmentManager().popBackStack();
-                                finish();
-                            }
-                        }).show();
-            }
-        });
-    }
 
 
     public void Call_Server() {
