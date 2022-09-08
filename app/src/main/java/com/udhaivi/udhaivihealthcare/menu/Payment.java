@@ -38,8 +38,8 @@ import java.util.ArrayList;
                     //Getting the values from the EditTexts
                     String amount = "1";
                     String note = "Test";
-                    String name = "Narayan Test";
-                    String upiId = "nanditamahant@ybl";
+                    String name = "Narayan Singh";
+                    String upiId = "narayansingh469@oksbi";
                     payUsingUpi(amount, upiId, name, note);
                 }
             },0);

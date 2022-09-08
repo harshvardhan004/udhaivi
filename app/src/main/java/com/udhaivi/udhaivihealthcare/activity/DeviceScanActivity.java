@@ -242,11 +242,17 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
                 if (mScanning) {
                     scanLeDevice(false);
                 }
+
+                SharedPreferences.Editor editor = getSharedPreferences("Device_Details", MODE_PRIVATE).edit();
+                editor.putString("address", device.getAddress());
+                editor.putString("name", name);
+                editor.apply();
+
                 final Intent intent = new Intent(DeviceScanActivity.this, Dashboard.class);
                 intent.putExtra("address", device.getAddress());
                 intent.putExtra("name", name);
                 startActivity(intent);
-//                finish();
+                finish();
             }
         });
         setListAdapter(mLeDeviceListAdapter);

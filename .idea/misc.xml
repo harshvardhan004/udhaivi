@@ -3,11 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable-xxhdpi/bp_card.xml" value="0.137" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/bg_help.xml" value="0.137" />
         <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/ic_failed.xml" value="0.137" />
         <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/ic_success.xml" value="0.137" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_dashboard.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_login_splash.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_notification.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_otp.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_payment.xml" value="0.17" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_photo_upload.xml" value="0.21" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_signup.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_signupdetails.xml" value="0.2" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_splashscreen.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/add_new_files.xml" value="0.22" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/fragment_home.xml" value="0.21" />
+        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/services_activity.xml" value="0.25" />
         <entry key="..\:/udhaivi/app/src/main/res/drawable-xxhdpi/fileup.xml" value="0.135" />
         <entry key="..\:/udhaivi/app/src/main/res/drawable/card_view_bg.xml" value="0.135" />
         <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_bpblue.xml" value="0.1465" />

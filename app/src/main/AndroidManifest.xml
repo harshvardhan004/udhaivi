@@ -40,10 +40,7 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning, UnusedAttribute">
         <activity
-            android:name=".Report"
-            android:exported="false" />
-        <activity
-            android:name=".ModeCheck"
+            android:name=".app.ServicesActivity"
             android:exported="false" />
         <activity
             android:name=".menu.PdfActivity"
@@ -54,7 +51,9 @@
         <activity
             android:name=".menu.PhotoUpload"
             android:exported="true"
-            android:theme="@style/AppThemeer" />
+            android:theme="@style/AppThemeer">
+
+        </activity>
         <activity
             android:name=".app.WebView"
             android:exported="false" />
@@ -69,15 +68,6 @@
         <activity
             android:name=".activity.DeviceScanActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".app.ModeCheck"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeer" />
-
-        <activity
-            android:name=".app.Report"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppThemeer" />
         <activity
             android:name=".app.Splashscreen"
             android:exported="true"

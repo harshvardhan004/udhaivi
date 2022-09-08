@@ -97,6 +97,15 @@
                             android:layout_marginTop="3dp"
                             android:layout_marginRight="10dp"
                             android:layout_gravity="center"
+                            android:id="@+id/watch"
+                            android:src="@drawable/ecgimg"/>
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_gravity="center"
                             android:id="@+id/reload"
                             android:src="@drawable/ic_rotate"/>
 
