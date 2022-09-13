@@ -184,6 +184,11 @@ public class Otp extends AppCompatActivity {
 
     public void verify_otp(String s) {
         try {
+//            Intent i2 = new Intent(Otp.this, Signupdetails.class);
+//            i2.putExtra("phone", phone);
+//            i2.putExtra("otp", s);
+//            startActivity(i2);
+//            finish();
             RequestQueue MyRequestQueue = Volley.newRequestQueue(this);
             //  String url = Config.URL_API;//Helpers.getappUrl(this); // <----enter your post url here
 //            String url = Config.URL_API_Attendance+"?"+data;

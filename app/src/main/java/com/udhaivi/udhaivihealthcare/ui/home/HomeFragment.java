@@ -42,6 +42,7 @@ import com.udhaivi.udhaivihealthcare.ECGList;
 import com.udhaivi.udhaivihealthcare.R;
 import com.udhaivi.udhaivihealthcare.activity.DeviceScanActivity;
 import com.udhaivi.udhaivihealthcare.activity.MainActivity;
+import com.udhaivi.udhaivihealthcare.app.Splashscreen;
 import com.udhaivi.udhaivihealthcare.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -136,16 +137,25 @@ public class HomeFragment extends Fragment {
                 new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
                     @Override
                     public void run() {
-//                        getdata();
+                        getdata(values);
                     }
                 }, 2000);
+            }
+        });
+
+        root.findViewById(R.id.watch).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getContext(), DeviceScanActivity.class);
+                getActivity().startActivity(i);
+                getActivity().finish();
             }
         });
 
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-//                getdata();
+                getdata(values);
                 sync = 0;
             }
         }, 3000);
