@@ -166,6 +166,10 @@ public class HomeFragment extends Fragment {
 
     }
 
+    public void changesync(){
+        sync = 0;
+    }
+
     public void callsos(){
 
         Intent intent = new Intent(Intent.ACTION_DIAL);
@@ -254,6 +258,9 @@ public class HomeFragment extends Fragment {
             Log.d("receiver", "Got_message: " + intent.getStringArrayListExtra("peerId"));
 
             values = intent.getStringArrayListExtra("peerId");
+            sync = intent.getIntExtra("syncheck", 0);
+
+            Log.d("sdffsdf", String.valueOf(sync));
 
             getdata(values);
 

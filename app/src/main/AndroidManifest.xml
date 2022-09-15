@@ -44,10 +44,18 @@
             android:exported="false" />
         <activity
             android:name=".menu.PdfActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/AppThemeer"/>
         <activity
             android:name=".menu.Payment"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/AppThemeer">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".menu.PhotoUpload"
             android:exported="true"
@@ -65,6 +73,18 @@
             android:name=".Dashboard"
             android:exported="false"
             android:label="@string/title_activity_dashboard" />
+
+        <activity
+            android:name=".app.ModeCheck"
+            android:exported="false"
+            android:theme="@style/AppThemeer"/>
+        <activity
+            android:name=".app.Report"
+            android:exported="true"
+            android:theme="@style/AppThemeer">
+
+        </activity>
+
         <activity
             android:name=".activity.DeviceScanActivity"
             android:screenOrientation="portrait" />
@@ -72,11 +92,9 @@
             android:name=".app.Splashscreen"
             android:exported="true"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+
         </activity>
         <activity android:name=".activity.MainActivity" />
         <activity android:name=".activity.TimeActivity" />
@@ -161,7 +179,14 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".app.Signupdetails"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".app.Otp"
             android:theme="@style/AppTheme.NoActionBar" />

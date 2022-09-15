@@ -91,6 +91,7 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
     boolean open=true;
     int setinterval = 0;
     private BluetoothAdapter mBluetoothAdapter;
+    int syncheck = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,23 +111,25 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
         final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         mBluetoothAdapter = bluetoothManager.getAdapter();
 
+//        fragment = (HomeFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_activity_bottom_nav);
+
         SharedPreferences editor = getSharedPreferences("User_Details", MODE_PRIVATE);
         String name = editor.getString("firstname", "");
         String phone = editor.getString("phone", "");
 
-        if( name == "" && phone == ""){
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    // Do something after 5s = 5000ms
-
-                    Intent i = new Intent(Dashboard.this, LoginSplash.class);
-                    startActivity(i);
-                    finish();
-                }
-            }, 3000);
-        }
+//        if( name == "" && phone == ""){
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    // Do something after 5s = 5000ms
+//
+//                    Intent i = new Intent(Dashboard.this, LoginSplash.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+//            }, 3000);
+//        }
 
         init();
         connectDevice();
@@ -195,6 +198,9 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
                 @Override
                 public void run() {
                     Log.d("gvjn", "gcghf");
+//                    HomeFragment fragment1 = new HomeFragment();
+//                    ((HomeFragment) fragment1).changesync();
+                    syncheck = 0;
                     getalldata();
                 }
             }, 90000);
@@ -352,7 +358,10 @@ public class Dashboard extends BaseActivity implements MainAdapter.onItemClickLi
 
         Intent intent = new Intent("BDATA");
         intent.putStringArrayListExtra("peerId", x);
+        intent.putExtra("syncheck", syncheck);
         LocalBroadcastManager.getInstance(Dashboard.this).sendBroadcast(intent);
+
+        syncheck = 1;
 
         Intent intent1 = new Intent("DDATA");
         intent1.putStringArrayListExtra("peerIdD", x);

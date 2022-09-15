@@ -3,82 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable-xxhdpi/bp_card.xml" value="0.137" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/bg_help.xml" value="0.137" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/ic_failed.xml" value="0.137" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/drawable/ic_success.xml" value="0.137" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_dashboard.xml" value="0.11367753623188406" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_login_splash.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_notification.xml" value="0.11367753623188406" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_otp.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_payment.xml" value="0.17" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_photo_upload.xml" value="0.21" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_signup.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_signupdetails.xml" value="0.2" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/activity_splashscreen.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/add_new_files.xml" value="0.22" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/fragment_home.xml" value="0.21" />
-        <entry key="..\:/Users/Narayan Singh/StudioProjects/udhaivi/app/src/main/res/layout/services_activity.xml" value="0.25" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable-xxhdpi/fileup.xml" value="0.135" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/card_view_bg.xml" value="0.135" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_bpblue.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_pdf.xml" value="0.135" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_profile.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_profile_gray.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_profile_location.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_right_arrow_blue.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/ic_tab.xml" value="0.1465" />
-        <entry key="..\:/udhaivi/app/src/main/res/drawable/next.xml" value="0.135" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/actionbar_indeterminate_progress.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_alarm_set.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_alarm_set2.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_auto_temp_data.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_autooxy_info.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_basic.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_battery.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_clear.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_clock_set.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_csv.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_dashboard.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_detail_data.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_device_info.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_dial.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg.xml" value="0.25" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg_data.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecg_report.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecghisdata.xml" value="0.1935185185185185" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_ecgppg_pdf.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_heart_rate.xml" value="0.1" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_heart_rate_set.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_login.xml" value="0.1" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_measurement.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_other_alarm.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_otp.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_payment.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_photo_upload.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_prescription.xml" value="0.2074074074074074" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_profile.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_scan.xml" value="0.22" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_set_goal.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_signup.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_signupdetails.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_temperature.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_total_data.xml" value="0.2074074074074074" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/activity_wheelshow.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/add_new_files.xml" value="0.33" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_dashboard.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_first.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_history.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_home.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_menu.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_report.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_schedule.xml" value="0.2074074074074074" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/fragment_second.xml" value="0.22447916666666667" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/listitem_device.xml" value="0.29322916666666665" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/recycler_doctor.xml" value="0.221025641025641" />
-        <entry key="..\:/udhaivi/app/src/main/res/layout/recycler_hospital.xml" value="0.221025641025641" />
+        <entry key="..\:/Android/udhaivi/app/src/main/res/layout/activity_pdf.xml" value="0.176" />
+        <entry key="..\:/Android/udhaivi/app/src/main/res/layout/activity_photo_upload.xml" value="0.2" />
+        <entry key="..\:/Android/udhaivi/app/src/main/res/layout/activity_signup.xml" value="0.2608695652173913" />
+        <entry key="..\:/Android/udhaivi/app/src/main/res/layout/activity_signupdetails.xml" value="0.2608695652173913" />
       </map>
     </option>
   </component>

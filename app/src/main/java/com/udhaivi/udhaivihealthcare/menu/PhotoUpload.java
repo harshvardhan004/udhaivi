@@ -16,6 +16,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -27,6 +28,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,6 +44,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.mikelau.croperino.CropImage;
 import com.mikelau.croperino.CroperinoConfig;
 import com.mikelau.croperino.CroperinoFileUtil;
@@ -91,6 +94,7 @@ public class PhotoUpload extends AppCompatActivity {
     ArrayAdapter adapter1, type_adapter;
     String selected_pack, selected_pack_id, pack_price, consultant_type;
     LinearLayout lean1;
+    TextInputLayout medicaltype;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,63 +104,59 @@ public class PhotoUpload extends AppCompatActivity {
         path = findViewById(R.id.path);
         logo = findViewById(R.id.logo);
 
-        tct = findViewById(R.id.tct);
+        tct = findViewById(R.id.nameid);
         description = findViewById(R.id.description);
-        data_spinner = findViewById(R.id.data_spinner);
-        type_spinner = findViewById(R.id.type_spinner);
-        lean1 = findViewById(R.id.lean1);
+//        lean1 = findViewById(R.id.lean1);
+        medicaltype = findViewById(R.id.medicaltype);
 
         String type_consultant[] = {"Select", "Report", "Consultancy"};
 
-        type_adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, type_consultant);
-        type_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        type_spinner.setAdapter(type_adapter);
+        ArrayAdapter<String> adapterxx =
+                new ArrayAdapter<>(
+                        this,
+                        R.layout.dropdown_menu_popup_item,
+                        type_consultant);
 
-        type_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        AutoCompleteTextView editTextFilledExposedDropdown =
+                findViewById(R.id.filled_exposed_dropdown);
+        editTextFilledExposedDropdown.setAdapter(adapterxx);
 
+        editTextFilledExposedDropdown.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
-                consultant_type = "";
-                consultant_type = type_consultant[p];
-                Log.d("jgiiug", type_consultant[p]);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                consultant_type = type_consultant[i];
+                Log.d("jgiiug", type_consultant[i]);
                 if(consultant_type.equals("Consultancy")){
-                    lean1.setVisibility(View.VISIBLE);
+                    medicaltype.setVisibility(View.VISIBLE);
                 }
                 else{
-                    lean1.setVisibility(View.GONE);
-                }
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
+                    medicaltype.setVisibility(View.GONE);
+                }            }
         });
 
-        adapter1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, pack_type);
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        data_spinner.setAdapter(adapter1);
+        adapter1 = new ArrayAdapter<>(
+                        this,
+                        R.layout.dropdown_menu_popup_item,
+                        pack_type);
 
-        data_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        AutoCompleteTextView data_type =
+                findViewById(R.id.data_spinner);
+        data_type.setAdapter(adapter1);
 
+        data_type.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int p, long id) {
-                Log.d("Adsds", pack_type.get(p));
-                Log.d("dlfmdfkjsn", payment_amount.get(p));
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.d("Adsds", pack_type.get(i));
+                Log.d("dlfmdfkjsn", payment_amount.get(i));
 
-                selected_pack = pack_type.get(p);
-                pack_price = payment_amount.get(p);
-                selected_pack_id = pack_id.get(p);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                selected_pack = pack_type.get(i);
+                pack_price = payment_amount.get(i);
+                selected_pack_id = pack_id.get(i);
             }
         });
 
 
-
-        Button b1 = findViewById(R.id.filechoose);
+        ImageView b1 = findViewById(R.id.filechoose);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -305,7 +305,7 @@ public class PhotoUpload extends AppCompatActivity {
         }
 
         if(Dtct.equals("")){
-            Toast.makeText(PhotoUpload.this, "Please Enter Tutorial Title", Toast.LENGTH_SHORT).show();
+            Toast.makeText(PhotoUpload.this, "Please Enter File Name", Toast.LENGTH_SHORT).show();
             tct.requestFocus();
             return;
         }

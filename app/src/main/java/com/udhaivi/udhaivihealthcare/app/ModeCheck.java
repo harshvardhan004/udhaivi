@@ -23,11 +23,11 @@ public class ModeCheck extends AppCompatActivity {
         String name = editor.getString("firstname", "");
         String phone = editor.getString("phone", "");
 
-        if( name == "" && phone == ""){
-                    Intent i = new Intent(ModeCheck.this, LoginSplash.class);
-                    startActivity(i);
-                    finish();
-            }
+//        if( name == "" && phone == ""){
+//                    Intent i = new Intent(ModeCheck.this, LoginSplash.class);
+//                    startActivity(i);
+//                    finish();
+//            }
 
         findViewById(R.id.premiumuser).setOnClickListener(new View.OnClickListener() {
             @Override

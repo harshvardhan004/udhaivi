@@ -96,19 +96,19 @@ public class DeviceScanActivity extends AppCompatActivity implements Permissions
         String name = editor.getString("firstname", "");
         String phone = editor.getString("firstname", "");
 
-        if( name == "" && phone == ""){
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    // Do something after 5s = 5000ms
-
-                    Intent i = new Intent(DeviceScanActivity.this, LoginSplash.class);
-                    startActivity(i);
-                    finish();
-                }
-            }, 3000);
-        }
+//        if( name == "" && phone == ""){
+//            final Handler handler = new Handler();
+//            handler.postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
+//                    // Do something after 5s = 5000ms
+//
+//                    Intent i = new Intent(DeviceScanActivity.this, LoginSplash.class);
+//                    startActivity(i);
+//                    finish();
+//                }
+//            }, 3000);
+//        }
 
         statusCheck();
 

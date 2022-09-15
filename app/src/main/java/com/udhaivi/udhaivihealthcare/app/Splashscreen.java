@@ -44,7 +44,7 @@ public class Splashscreen extends AppCompatActivity {
                 }
                 else{
 
-                    Intent i = new Intent(Splashscreen.this, ServicesActivity.class);
+                    Intent i = new Intent(Splashscreen.this, ModeCheck.class);
                     startActivity(i);
                     finish();
 

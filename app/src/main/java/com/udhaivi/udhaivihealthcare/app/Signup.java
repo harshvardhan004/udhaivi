@@ -17,6 +17,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.udhaivi.udhaivihealthcare.R;
+import com.udhaivi.udhaivihealthcare.adapter.TotalDataAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,12 +58,16 @@ public class Signup extends AppCompatActivity {
                 public void onResponse(String response) {
                     Log.d("response", response);
 
-//                    if(response == "100 - Msg successfully sent"){
-                        Intent i = new Intent(Signup.this, Otp.class);
-                        i.putExtra("phone", String.valueOf(ph.getText()));
-                        startActivity(i);
-                        finish();
-//                    }
+                    if(response.equals("User Already Exist")) {
+                        Toast.makeText(Signup.this, "User Already Exists! Please Login...", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                        else{
+                            Intent i = new Intent(Signup.this, Otp.class);
+                            i.putExtra("phone", String.valueOf(ph.getText()));
+                            startActivity(i);
+                            finish();
+                        }
                 }
             }, new Response.ErrorListener() { //Create an error listener to handle errors appropriately.
                 @Override

@@ -237,7 +237,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     textButton.stopAnimation();
 
-                                    Intent ia = new Intent(LoginActivity.this, DeviceScanActivity.class);
+                                    Intent ia = new Intent(LoginActivity.this, ModeCheck.class);
                                     startActivity(ia);
                                     finish();
 
